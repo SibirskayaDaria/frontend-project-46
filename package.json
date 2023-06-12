@@ -2,14 +2,18 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/SibirskayaDaria/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/SibirskayaDaria/frontend-project-46/actions)",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "commander": "^10.0.1"
+    "commander": "^10.0.1",
+    "react": "^18.2.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^8.42.0",
+    "eslint-plugin-react": "^7.32.2"
+  }
 }
