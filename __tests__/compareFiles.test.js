@@ -1,4 +1,4 @@
-const { compareFiles } = require('../gendiff');
+const { compareFiles } = require('../gendiff.js');
 
 test('Compare flat JSON files - same files', () => {
   const file1 = require('../file1.json');
