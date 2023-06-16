@@ -2,12 +2,13 @@ const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
 
-const readFile = (filepath) => {
-  const resolvedPath = path.resolve(__dirname, filepath);
-  return fs.readFileSync(resolvedPath, 'utf8');
-};
+const compareFiles = (file1Path, file2Path) => {
+  const resolvedPath1 = path.resolve(__dirname, file1Path);
+  const resolvedPath2 = path.resolve(__dirname, file2Path);
 
-const compareFiles = (file1, file2) => {
+  const file1 = fs.readFileSync(resolvedPath1, 'utf8');
+  const file2 = fs.readFileSync(resolvedPath2, 'utf8');
+
   const obj1 = JSON.parse(file1);
   const obj2 = JSON.parse(file2);
 
@@ -32,4 +33,5 @@ const compareFiles = (file1, file2) => {
 module.exports = {
   compareFiles,
 };
+
 

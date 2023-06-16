@@ -1,20 +1,26 @@
-const { compareFiles } = require('../gendiff.js');
+const { compareFiles } = require('../gendiff');
 
-test('Compare flat JSON files - same files', () => {
-  const file1 = require('../file1.json');
-  const file2 = require('../file2.json');
+test('Сравнение плоских файлов JSON - одинаковые файлы', () => {
+  const file1Path = `${__dirname}/../file1.json`;
+  const file2Path = `${__dirname}/../file1.json`; // Здесь используется один и тот же файл
 
-  const result = compareFiles(JSON.stringify(file1), JSON.stringify(file2));
-  expect(result).toBe('');
+  const result = compareFiles(file1Path, file2Path);
+  const expected = 
+  '  follow: false\n  host: hexlet.io\n  proxy: 123.234.53.22\n  timeout: 50'
+  
+  expect(result).toEqual(expected);
 });
 
-test('Compare flat JSON files - different values', () => {
-  const file1 = require('../file1.json');
-  const file2 = require('../file2.json');
+test('Сравнение плоских файлов JSON - разные значения', () => {
+  const file1Path = `${__dirname}/../file1.json`;
+  const file2Path = `${__dirname}/../file2.json`;
 
-  const result = compareFiles(JSON.stringify(file1), JSON.stringify(file2));
-  expect(result).toBe(`- timeout: 50\n+ timeout: 20\n+ verbose: true`);
+  const result = compareFiles(file1Path, file2Path);
+  const expected = `- follow: false
+  host: hexlet.io
+- proxy: 123.234.53.22
+- timeout: 50
++ timeout: 20
++ verbose: true`;
+  expect(result).toBe(expected);
 });
-
-
-
