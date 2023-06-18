@@ -1,4 +1,4 @@
-eplugins:
+plugins:
   - jest
 
 env:
