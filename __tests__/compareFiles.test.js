@@ -5,7 +5,7 @@ test('Сравнение плоских файлов JSON - одинаковые
   const file2Path = `${__dirname}/../file1.json`; // Здесь используется один и тот же файл
 
   const result = compareFiles(file1Path, file2Path);
-  const expected = 'follow: false\n  host: hexlet.io\n  proxy: 123.234.53.22\n  timeout: 50\n';
+  const expected = 'follow: false\n  host: hexlet.io\n  proxy: 123.234.53.22\n  timeout: 50';
   expect(result).toEqual(expected);
 });
 
@@ -14,6 +14,7 @@ test('Сравнение плоских файлов JSON - разные зна�
   const file2Path = `${__dirname}/../file2.json`;
 
   const result = compareFiles(file1Path, file2Path);
-  const expected = `- follow: false\n  host: hexlet.io\n- proxy: 123.234.53.22\n- timeout: 50\n+ timeout: 20\n+ verbose: true\n`;
+  const expected = `- follow: false\n  host: hexlet.io\n- proxy: 123.234.53.22\n- timeout: 50\n+ timeout: 20\n+ verbose: true`;
   expect(result).toEqual(expected);
 });
+
