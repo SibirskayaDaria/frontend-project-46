@@ -33,5 +33,3 @@ const compareFiles = (file1Path, file2Path) => {
 module.exports = {
   compareFiles,
 };
-
-
