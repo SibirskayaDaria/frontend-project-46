@@ -1,4 +1,4 @@
-const { compareFiles } = require('../gendiff.js');
+const { compareFiles } = require('../bin/gendiff.js');
 
 test('Сравнение плоских файлов JSON - разные значения', () => {
   const file1Path = `${__dirname}/../file1.json`;
