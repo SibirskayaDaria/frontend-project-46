@@ -1,35 +1,20 @@
-const fs = require('fs');
-const path = require('path');
-const _ = require('lodash');
+#!/usr/bin/env node
+import { Command } from 'commander';
+import gendiff from '../src/index.js';
 
-const compareFiles = (file1Path, file2Path) => {
-  const resolvedPath1 = path.resolve(__dirname, file1Path);
-  const resolvedPath2 = path.resolve(__dirname, file2Path);
+const program = new Command();
 
-  const file1 = fs.readFileSync(resolvedPath1, 'utf8');
-  const file2 = fs.readFileSync(resolvedPath2, 'utf8');
-
-  const obj1 = JSON.parse(file1);
-  const obj2 = JSON.parse(file2);
-
-  const keys = _.sortBy(_.union(_.keys(obj1), _.keys(obj2)));
-
-  const diff = keys.map((key) => {
-    if (!_.has(obj1, key)) {
-      return `+ ${key}: ${obj2[key]}`;
-    }
-    if (!_.has(obj2, key)) {
-      return `- ${key}: ${obj1[key]}`;
-    }
-    if (_.isEqual(obj1[key], obj2[key])) {
-      return `  ${key}: ${obj1[key]}`;
-    }
-    return `- ${key}: ${obj1[key]}\n+ ${key}: ${obj2[key]}`;
+program
+  .name('gendiff')
+  .description('Compares two configuration files and shows a difference.')
+  .version('1.0.0')
+  .argument('<filepath1>')
+  .argument('<filepath2>')
+  .option('-f, --format <type>', 'output format', 'stylish')
+  .action((filepath1, filepath2) => {
+    const option = program.opts();
+    // eslint-disable-next-line no-console
+    console.log(gendiff(filepath1, filepath2, option.format));
   });
 
-  return diff.join('\n');
-};
-
-module.exports = {
-  compareFiles,
-};
+program.parse();
