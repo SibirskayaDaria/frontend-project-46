@@ -1,12 +1,15 @@
-install:
+install: 
 	npm ci
-gendiff:
-	node gendiff.js
+	sudo npm link
+publish:
+	sudo npm publish --dry-run
+gendiff:	 
+	node bin/gendiff.js
 lint:
 	npx eslint .
-publish:
-	npm publish --dry-run
+	
+test:
+	npm test
+
 test-coverage:
-	npm test -- --coverage
-link:
-	sudo npm link
+	npm test -- --coverage 
