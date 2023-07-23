@@ -1,9 +1,9 @@
-install: 
+install: # установить зависимости
 	npm ci
 	sudo npm link
 publish:
 	sudo npm publish --dry-run
-gendiff:	 
+gendiff:	 # запустить приложение
 	node bin/gendiff.js
 lint:
 	npx eslint .
@@ -13,3 +13,4 @@ test:
 
 test-coverage:
 	npm test -- --coverage 
+	
