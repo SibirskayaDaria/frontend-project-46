@@ -16,6 +16,7 @@
   "bugs": {
     "url": "https://github.com/SibirskayaDaria/frontend-project-46/issues"
   },
+  "type": "module",
   "homepage": "https://github.com/SibirskayaDaria/frontend-project-46#readme",
   "dependencies": {
     "commander": "^9.5.0",

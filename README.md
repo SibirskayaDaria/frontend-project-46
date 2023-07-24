@@ -1,5 +1,54 @@
-# nodejs-package
+### Hexlet tests and linter status:
 
-[![Node CI](https://github.com/hexlet-boilerplates/nodejs-package/workflows/Node%20CI/badge.svg)](https://github.com/hexlet-boilerplates/nodejs-package/actions)
-[![Maintainability](https://api.codeclimate.com/v1/badges/dfc50c2d88cd46d069c1/maintainability)](https://codeclimate.com/github/hexlet-boilerplates/nodejs-package/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/dfc50c2d88cd46d069c1/test_coverage)](https://codeclimate.com/github/hexlet-boilerplates/nodejs-package/test_coverage)
+[![Actions Status](https://github.com/ToxicNN/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/ToxicNN/frontend-project-46/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/80f69bf1086b2e740acc/maintainability)](https://codeclimate.com/github/ToxicNN/frontend-project-46/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/80f69bf1086b2e740acc/test_coverage)](https://codeclimate.com/github/ToxicNN/frontend-project-46/test_coverage)
+[![tests](https://github.com/ToxicNN/frontend-project-46/actions/workflows/gendiff.yml/badge.svg)](https://github.com/ToxicNN/frontend-project-46/actions/workflows/gendiff.yml)
+
+---
+
+# Description
+
+GenDiff is a cli-app that generates the difference between two files and outputs it in one of three formats.
+The app works with formats json and yaml(yml).
+Supported output formats: stylish, plain and json.
+
+---
+
+## Minimum system requirements
+
+Node.js 13.2.0 or higher
+
+---
+
+## Installation:
+
+Attention! Commands must be run from the app directory!
+
+Installing dependencies
+
+```
+make install
+```
+
+Installing a package with app
+
+The following command will be run as root!
+
+```
+make link
+```
+[![asciicast](https://asciinema.org/a/5LPzQEuaOwwRPk0zyNp4FpiUy.svg)](https://asciinema.org/a/5LPzQEuaOwwRPk0zyNp4FpiUy)
+---
+
+## Usage:
+
+```
+Usage: gendiff [-h] [-V] [-f] <filepath1> <filepath2>
+
+Optional arguments:
+  -V, --version  Show program's version number and exit.
+  -f, --format   Choose output format.
+  -h, --help     Show this help message and exit.
+
+```
