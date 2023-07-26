@@ -5,7 +5,8 @@
   "description": "Difference Calculator",
   "main": "src/index.js",
   "scripts": {
-    "test": "npx jest"
+    "test": "npx jest",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
