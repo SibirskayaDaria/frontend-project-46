@@ -25,4 +25,3 @@ describe('gendiff', () => {
     expect(gendiff(file1, file2)).toEqual(readFixture('expectedStylish.txt'));
   });
 });
-    
