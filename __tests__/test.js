@@ -22,7 +22,7 @@ describe('gendiff', () => {
     expect(gendiff(file1, file2, 'stylish')).toEqual(readFixture('expectedStylish.txt'));
     expect(gendiff(file1, file2, 'plain')).toEqual(readFixture('expectedPlain.txt'));
     expect(gendiff(file1, file2, 'json')).toEqual(readFixture('expectedJSON.txt'));
-    
+    expect(gendiff(file1, file2)).toEqual(readFixture('expectedStylish.txt'));
   });
 });
     
