@@ -37,12 +37,7 @@ function makeTree(cont1, cont2) {
         value: value1,
       };
     }
-    return {
-      type: 'changed',
-      key,
-      value1,
-      value2,
-    };
+    return { key, value: cont1[key], type: 'unchanged' }
   });
 
   return result;
