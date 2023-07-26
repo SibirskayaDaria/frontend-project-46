@@ -11,7 +11,6 @@
       "sourceType": "module"
   },
   "rules": {
-      "import/extensions": "off", // обеспечить согласованное использование расширения файла в пути импорта
-      "import/prefer-default-export": "off" // ESLint предпочитает экспорт по умолчанию импорт/предпочитает экспорт по умолчанию
+    "no-console": 0
   }
 }
