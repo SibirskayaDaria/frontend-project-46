@@ -14,8 +14,8 @@ const readFixture = (filename) => readFileSync(getFixturePath(filename), 'utf-8'
 
 const formats = ['json', 'yaml', 'yml'];
 
-describe('gendiff', () => {
-  test.each(formats)('genDiff should work with %p', (format) =>
+describe('genDiff should work correctly', () => {
+  test.each(formats)('genDiff should work with %p', (format) => {
     const file1 = getFixturePath(`file1.${format}`);
     const file2 = getFixturePath(`file2.${format}`);
 
