@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shamatarev/frontend-project-46.git"
+    "url": "git+https://github.com/SibirskayaDaria/frontend-project-46.git"
   },
   "author": "Shamatarev",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Shamatarev/frontend-project-46/issues"
+    "url": "https://github.com/SibirskayaDaria/frontend-project-46/issues"
   },
-  "homepage": "https://github.com/Shamatarev/frontend-project-46#readme",
+  "homepage": "https://github.com/SibirskayaDaria/frontend-project-46#readme",
   "dependencies": {
     "axios": "^1.4.0",
     "commander": "^9.5.0",
