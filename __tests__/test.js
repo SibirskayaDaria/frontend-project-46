@@ -1,8 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { test, expect, describe } from '@jest/globals';
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
 import { readFileSync } from 'fs';
+import { test, expect, describe } from '@jest/globals';
 // eslint-disable-next-line import/extensions
 import gendiff from '../src/index.js';
 
