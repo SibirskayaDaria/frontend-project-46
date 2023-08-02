@@ -12,7 +12,7 @@ function makeTree(cont1, cont2) {
     const value1 = clonedCont1[key];
     const value2 = clonedCont2[key];
 
-    if (!Object.prototype.hasOwnProperty.call(clonedCont1, key)) {
+    if (!_.has(clonedCont1, key)) {
       return {
         type: 'added',
         key,
@@ -20,7 +20,7 @@ function makeTree(cont1, cont2) {
       };
     }
 
-    if (!Object.prototype.hasOwnProperty.call(clonedCont2, key)) {
+    if (!_.has(clonedCont2, key)) {
       return {
         type: 'deleted',
         key,

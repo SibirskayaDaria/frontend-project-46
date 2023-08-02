@@ -14,17 +14,17 @@ const generatePath = (node, path) => (path !== '' ? `${path}.${node.key}` : Stri
 
 const exportNode = (array, path) => array.filter((node) => node.type !== 'unchanged').map((node) => {
   const { type } = node;
-  const allPath = generatePath(node, path);
+  const finalPath = generatePath(node, path);
 
   switch (type) {
     case 'parent':
-      return `${exportNode(node.children, allPath).join('\n')}`;
+      return `${exportNode(node.children, finalPath).join('\n')}`;
     case 'changed':
-      return `Property '${allPath}' was updated. From ${stringify(node.value1)} to ${stringify(node.value2)}`;
+      return `Property '${finalPath}' was updated. From ${stringify(node.value1)} to ${stringify(node.value2)}`;
     case 'added':
-      return `Property '${allPath}' was added with value: ${stringify(node.value)}`;
+      return `Property '${finalPath}' was added with value: ${stringify(node.value)}`;
     case 'deleted':
-      return `Property '${allPath}' was removed`;
+      return `Property '${finalPath}' was removed`;
     default:
       throw new Error(`Unknown node type ${node.type}.`);
   }
@@ -33,4 +33,5 @@ const exportNode = (array, path) => array.filter((node) => node.type !== 'unchan
 function generateTreePlain(propertyPath) {
   return `${exportNode(propertyPath, '').join('\n')}`;
 }
+
 export default generateTreePlain;
