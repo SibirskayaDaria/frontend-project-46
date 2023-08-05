@@ -1,18 +1,15 @@
 import _ from 'lodash';
 
 function makeTree(cont1, cont2) {
-  const clonedCont1 = _.cloneDeep(cont1);
-  const clonedCont2 = _.cloneDeep(cont2);
-
-  const arrowKeysFile1 = Object.keys(clonedCont1);
-  const arrowKeysFile2 = Object.keys(clonedCont2);
+  const arrowKeysFile1 = Object.keys(cont1);
+  const arrowKeysFile2 = Object.keys(cont2);
   const sumArrowKeys = _.sortBy(_.union(arrowKeysFile1, arrowKeysFile2));
 
   const result = sumArrowKeys.map((key) => {
-    const value1 = clonedCont1[key];
-    const value2 = clonedCont2[key];
+    const value1 = cont1[key];
+    const value2 = cont2[key];
 
-    if (!_.has(clonedCont1, key)) {
+    if (!Object.prototype.hasOwnProperty.call(cont1, key)) {
       return {
         type: 'added',
         key,
@@ -20,7 +17,7 @@ function makeTree(cont1, cont2) {
       };
     }
 
-    if (!_.has(clonedCont2, key)) {
+    if (!Object.prototype.hasOwnProperty.call(cont2, key)) {
       return {
         type: 'deleted',
         key,
@@ -54,5 +51,4 @@ function makeTree(cont1, cont2) {
 
   return result;
 }
-
 export default makeTree;
