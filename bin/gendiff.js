@@ -14,7 +14,7 @@ program
   .action((filepath1, filepath2) => {
     const option = program.opts();
     // eslint-disable-next-line no-console
-    console.log(gendiff(filepath1, filepath2, option.form));
+    console.log(gendiff(filepath1, filepath2, option.format));
   });
 
 program.parse();
